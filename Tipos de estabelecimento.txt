@@ -1,0 +1,7 @@
+Churrascaria
+Pizzaria
+Lanchonete
+Sushi
+Cafeteria
+Sorveteria
+Confeitaria

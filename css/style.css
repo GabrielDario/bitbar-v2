@@ -1,0 +1,141 @@
+body {
+    text-align: center;
+    background-image: url("../img/background.webp");
+
+    background-size: 1319px;
+}
+@font-face {
+    font-family: CinzelDecorative-Regular;
+    src: url('../fonte/CinzelDecorative-Regular.otf');
+}
+  @font-face {
+    font-family: Silkscreen-Regular;
+    src: url('../fonte/CinzelDecorative-Regular.otf');
+    src: url('../fonte/CinzelDecorative-Regular.otf');
+  }
+h1 {
+    color: rgb(255, 123, 0);
+    font-size: 70px;
+    font-family: CinzelDecorative-Regular;
+}
+.pc {
+    font-size: 30px;
+    color: beige;
+}
+.lista h2 {
+    color: cornsilk;
+    font-family: CinzelDecorative-Regular;
+}
+.mesas p {
+    font-family: CinzelDecorative-Regular;
+}
+p {
+    color: white;
+}
+td {
+    padding: 0px 25px;
+    width: 130px;
+    background: darkgray;
+    height: 27px;
+}
+table {
+    border: 1px solid black;
+    display: inline-grid;
+}
+.mesas p {
+    font-size: 35px;
+    color: rgb(190, 16, 16);
+    font-weight: bold;
+}
+.mesas {
+    color: white;
+    font-size: 20px;
+}
+.produtos p {
+    display: contents;
+    font-size: 20px;
+}
+
+.produtos ,.todasAsMesas, .comandar, .extrato, .informacoes{
+    display: none;
+}
+li{
+    display: inline-block;
+    margin-left: 16px;
+    cursor: pointer;
+}
+
+li:hover{
+    background-color: dimgray;
+    opacity: 0.6;
+}
+.todasAsMesas button {
+    margin: 20px 20px;
+    height: 45px;
+    width: 45px;
+}
+.todasAsMesas h3, .comandar h3 {
+    color: white;
+}
+.todasAsMesas p {
+    color: white;
+    font-size: 20px;
+    font-family: cursive;
+}
+.pagamento {
+    color: white;
+    font-size: 27px;
+}
+.fecharMesa {
+    background: red;
+    font-size: 20px;
+
+}
+#consultar {
+    color: crimson;
+    margin-top: -20px;
+    font-size: 28px;
+}
+.buttonMesa {
+    width: 30px;
+}
+.extrato h3 {
+    color: burlywood;
+    font-size: 30px;
+}
+#valorArrecadado {
+    font-family: 'Silkscreen-Regular';
+    font-size: 40px;
+    color: mediumblue;
+}
+.informacoes h3 {
+    font-family: cursive;
+    font-size: 40px;
+    color: ghostwhite;
+}
+.tm {
+    background: darkkhaki;
+
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.taxa {
+    background: darkkhaki;
+
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.mesasFechadas {
+    background: darkkhaki;
+
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.informacoes h4 {
+    color: darkblue;
+    font-family: 'CinzelDecorative-Regular';
+    font-size: 20px;
+}
+.informacoes h5 {
+    font-size: 20px;
+}

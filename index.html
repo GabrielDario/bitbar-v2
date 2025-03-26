@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+    <script src="js/script.js"></script>
+    <title>BIT BAR</title>
+</head>
+
+<body id="body">
+    <!-- Aba inicial para ver quantas mesas e nome do restaurante -->
+    <h1 id="tituloRestaurante">Monte seu estabelecimento</h1>
+    <div class="mesas">
+        <p>Quantas mesas seu restaurante tem? 1 a 50 </p>
+        Nº Mesas <input type="number" id="numMesas"> <br><br>
+        Tipo do estabelecimento
+        <select id="tipoEstab">
+            <option value="Churrascaria">Churrascaria</option>
+            <option value="Pizzaria">Pizzaria</option>
+            <option value="Lanchonete">Lanchonete</option>
+            <option value="Sushi">Sushi</option>
+            <option value="Cafeteria">Cafeteria</option>
+            <option value="Sorveteria">Sorveteria</option>
+            <option value="Hamburgueria">Hamburgueria</option>
+            <option value="Bar">Bar</option>
+            <option value="PUB">PUB</option>
+            <option value="Boteco">Boteco</option>
+            <option value="Pastelaria">Pastelaria</option>
+        </select>
+       
+        <select id="artigo">
+            <option value="do">do</option>
+            <option value="da">da</option>
+        </select>
+        <br><br>
+        Nome do estabelecimento <input type="text" id="nomeEstab"> <br><br>
+        <input type="button" value="Enviar" onclick="qntMesas();">
+    </div>
+
+    <!-- aba do produtos -->
+    <div class="produtos">
+        <ul class="lista">
+            <li style="background-color: dimgray;opacity: 0.6;">
+                <h2>Adicionar Produtos</a></h2>
+            </li>
+            <li>
+                <h2 onclick="comandar();">Comandar</h2>
+            </li>
+            <li>
+                <h2 onclick="irMesas();">Mesas</h2>
+            </li>
+            <li>
+                <h2 onclick="infGeral()">Informações gerais</h2>
+            </li>
+            <li>
+                <h2 onclick="extrato();">Controle financeiro</h2>
+            </li>
+
+        </ul>
+        <p>Nome do produto para cadastrar?</p> <input type="text" id="nomeProduto"><br><br>
+        <p>Valor do produto?</p> <input type="number" id="precoProduto"><br><br>
+        <input type="button" value="Cadastrar" onclick="adicionarProdutos();"><br><br>
+
+        <h2 class="pc">Produtos cadastrados</h2>
+        <table id="tabela">
+            <tr style="border: 1px solid black;">
+                <td style="border: 1px solid black;"><b>Produto</b></td>
+                <td style="border: 1px solid black;"><b>Valor</b></td>
+            </tr>
+
+        </table>
+
+    </div>
+    <!-- Aba das mesas -->
+    <div class="todasAsMesas">
+
+        <ul class="lista">
+            <li>
+                <h2 onclick="irProdutos();">Adicionar produtos</a></h2>
+            </li>
+            <li>
+                <h2 onclick="comandar();">Comandar</h2>
+            </li>
+            <li style="background-color: dimgray;opacity: 0.6;">
+                <h2>Mesas</h2>
+            </li>
+            <li>
+                <h2 onclick="infGeral()">Informações gerais</h2>
+            </li>
+            <li>
+                <h2 onclick="extrato();">Controle financeiro</h2>
+            </li>
+        </ul>
+        <h3 id="consultar">Conta da mesa</h3>
+        <p id="consumo"></p>
+        <p id="gorgeta"></p>
+        <p id="total"></p>
+        <h3 class="pagamento">Taxa de serviço (10%) </h3>
+        <select id="taxa">
+            <option value="com">Com Taxa de serviço</option>
+            <option value="sem">Sem Taxa de serviço</option>
+        </select>
+        <h3 class="pagamento">Metodo de pagamento</h3>
+        <select id="pagamento">
+            <option value="1">Dinheiro</option>
+            <option value="2">Cartão Credito</option>
+            <option value="3">Cartão Débito</option>
+            <option value="4">Pix</option>
+            <option value="5">Cheque</option>
+        </select>
+        <br><br>
+        <input type="button" value="Fechar mesa" class="fecharMesa" onclick="fecharMesa()">
+        <h3>Consultar mesa: <input type="number" id="numMesa" class="buttonMesa">
+            <input type="button" value="Consultar" onclick="consultarMesa()">
+        </h3>
+
+    </div>
+    <!-- Aba para comandar -->
+    <div class="comandar">
+        <ul class="lista">
+            <li>
+                <h2 onclick="irProdutos();">Adicionar produtos</a></h2>
+            </li>
+            <li style="background-color: dimgray;opacity: 0.6;">
+                <h2>Comandar</h2>
+            </li>
+            <li>
+                <h2 onclick="irMesas();">Mesas</h2>
+            </li>
+
+            <li>
+                <h2 onclick="infGeral()">Informações gerais</h2>
+            </li>
+            <li>
+                <h2 onclick="extrato();">Controle financeiro</h2>
+            </li>
+        </ul>
+        <h3>Comandar mesa: <input type="text" id="mesaComandar" class="buttonMesa"> </h3>
+        <select id="produtoNaLista">
+
+        </select>
+        <br><br>
+        <input type="button" value="Lançar" onclick="lancarProduto();">
+    </div>
+    <!-- Aba de informações Gerais -->
+    <div class="informacoes">
+        <ul class="lista">
+            <li>
+                <h2 onclick="irProdutos();">Adicionar produtos</a></h2>
+            </li>
+            <li>
+                <h2 onclick="comandar()">Comandar</h2>
+            </li>
+            <li>
+                <h2 onclick="irMesas();">Mesas</h2>
+            </li>
+            <li style="background-color: dimgray;opacity: 0.6;">
+                <h2 onclick="infGeral()">Informações gerais</h2>
+            </li>
+            <li>
+                <h2 onclick="extrato();">Controle financeiro</h2>
+            </li>
+
+        </ul>
+        <h3>Informações Gerais</h3>
+        <div class="tm">
+            <h4>Ticket Médio (Preco médio gasto por pessoa)
+
+                <h5 id="ticketMedio"> <br>R$ 0<br></h5>
+            </h4>
+        </div>
+
+        <div class="taxa">
+            <h4>Controle de taxa de serviço</h4>
+            <h5 id="qntCom10"></h5>
+            <h5 id="qntSem10"></h5>
+            <h5 id="porcCom10"></h5>
+            <h5 id="porcSem10"></h5>
+        </div>
+        <div class="mesasFechadas">
+            <h4>Mesas Fechadas: </h4>
+            <h5 id="mesasFechadas">0</h5>
+        </div>
+
+    </div>
+
+    <!-- Aba de controle financeiro -->
+    <div class="extrato">
+        <ul class="lista">
+            <li>
+                <h2 onclick="irProdutos();">Adicionar produtos</a></h2>
+            </li>
+            <li>
+                <h2 onclick="comandar()">Comandar</h2>
+            </li>
+            <li>
+                <h2 onclick="irMesas();">Mesas</h2>
+            </li>
+
+            <li>
+                <h2 onclick="infGeral()">Informações gerais</h2>
+            </li>
+            <li style="background-color: dimgray;opacity: 0.6;">
+                <h2 onclick="extrato();">Controle financeiro</h2>
+            </li>
+        </ul>
+        <h3 id="valorArrecadado"></h3>
+        <h3>Método de pagamento</h3>
+        <table>
+            <tr>
+                <td><b>Método de pagamento</b></td>
+                <td><b>Quantidade cada método</b></td>
+                <td><b>Valor total em cada método</b></td>
+            </tr>
+            <tr>
+                <td>Dinheiro</td>
+                <td id="dinheiroQnt">0</td>
+                <td id="valorDinheiro">0</td>
+            </tr>
+            <tr>
+                <td>Cartão Credito</td>
+                <td id="qntCredito"><b>0</b></td>
+                <td id="valorCredito">0</td>
+            </tr>
+            <tr>
+                <td>Cartão Débito</td>
+                <td id="qntDebito"><b>0</b></td>
+                <td id="valorDebito">0</td>
+            </tr>
+            <tr>
+                <td>PIX</td>
+                <td id="pix"><b>0</b></td>
+                <td id="valorPix">0</td>
+            </tr>
+            <tr>
+                <td>Cheque</td>
+                <td id="cheque">0</td>
+                <td id="valorCheque">0</td>
+            </tr>
+    </div>
+
+</body>
+
+</html>
